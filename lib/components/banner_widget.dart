@@ -13,9 +13,9 @@ class BannerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 150,
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(banner.padding ?? 16),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(banner.borderRadius ?? 12),
         image: banner.image != null
             ? DecorationImage(
                 fit: BoxFit.fitWidth,

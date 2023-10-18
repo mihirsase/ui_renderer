@@ -9,7 +9,9 @@ String appData = """
          "image":"https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/11/2602810-13-Best-Prepared-Meal-Delivery-Services-of-2022-Header-81b9bf.jpg?w=1155&h=1528",
          "header_text":"New Recipe",
          "footer_text":"Cook Chicken Curry",
-         "footer_icon":true
+         "footer_icon":true,
+         "padding": 20.0,
+         "border_radius": 50.0
       },
       {
          "type":"banner",

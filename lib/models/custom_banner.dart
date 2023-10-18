@@ -8,6 +8,8 @@ class CustomBanner extends CustomWidget {
   final String? headerText;
   final String? footerText;
   final bool? footerIcon;
+  final double? padding;
+  final double? borderRadius;
 
   CustomBanner({
     super.widgetType,
@@ -16,6 +18,8 @@ class CustomBanner extends CustomWidget {
     this.headerText,
     this.footerText,
     this.footerIcon,
+    this.padding,
+    this.borderRadius,
   });
 
   static CustomBanner fromJson(final Map<String, dynamic> json) {
@@ -26,6 +30,8 @@ class CustomBanner extends CustomWidget {
       headerText: json['header_text'],
       footerText: json['footer_text'],
       footerIcon: json['footer_icon'],
+      padding: json['padding'],
+      borderRadius: json['border_radius'],
     );
   }
   static List<CustomBanner> listFromJson(final List<dynamic>? jsons) {

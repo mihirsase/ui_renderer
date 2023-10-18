@@ -8,8 +8,9 @@ class AppController {
   void load() {
     try {
       appConfig = _appRepo.loadAppConfig();
-    } catch (e) {
+    } catch (e,s) {
       print(e);
+      print(s);
     }
   }
 }
