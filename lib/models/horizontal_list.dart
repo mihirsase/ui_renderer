@@ -1,5 +1,6 @@
 import 'package:ui_renderer/enums/horizontal_list_item_type.dart';
 import 'package:ui_renderer/enums/widget_type.dart';
+import 'package:ui_renderer/extensions/double_extenstion.dart';
 import 'package:ui_renderer/models/custom_widget.dart';
 
 class HorizontalList extends CustomWidget {
@@ -25,11 +26,13 @@ class HorizontalListItem {
   final HorizontalListItemType? type;
   final String? text;
   final String? image;
+  final double? padding;
 
   HorizontalListItem({
     this.type,
     this.text,
     this.image,
+    this.padding,
   });
 
   static HorizontalListItem fromJson(final Map<String, dynamic> json) {
@@ -37,6 +40,7 @@ class HorizontalListItem {
       type: getHorizontalListItemTypeFromString(json['type']),
       text: json['text'],
       image: json['image'],
+      padding: DoubleExtension.toDouble(json['padding']),
     );
   }
 

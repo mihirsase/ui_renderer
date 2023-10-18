@@ -27,6 +27,7 @@ String appData = """
             {
                "type":"circular_item",
                "text":"Breakfast",
+               "padding": 12.0,
                "image":"https://www.health.com/thmb/_iBUay1PDoBBOha7QUTL1-EZVqo=/2121x0/filters:no_upscale():max_bytes(150000):strip_icc()/HighProteinBreakfast-469258e327f442418d1c2deca8fdbd66.jpg"
             },
             {
@@ -48,6 +49,7 @@ String appData = """
             {
                "type":"box_item",
                "text":"American",
+               "padding": 6.0,
                "image":"https://www.health.com/thmb/_iBUay1PDoBBOha7QUTL1-EZVqo=/2121x0/filters:no_upscale():max_bytes(150000):strip_icc()/HighProteinBreakfast-469258e327f442418d1c2deca8fdbd66.jpg"
             },
             {

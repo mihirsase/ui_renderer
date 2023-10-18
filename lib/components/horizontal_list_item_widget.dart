@@ -18,7 +18,7 @@ class HorizontalListItemWidget extends StatelessWidget {
           Container(
             height: 100,
             width: 100,
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.all(horizontalListItem.padding ?? 12),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white,
@@ -54,9 +54,9 @@ class HorizontalListItemWidget extends StatelessWidget {
     } else if (horizontalListItem.type == HorizontalListItemType.boxItem) {
       return Container(
         width: 100,
-        padding: const EdgeInsets.symmetric(
+        padding: EdgeInsets.symmetric(
           vertical: 18,
-          horizontal: 6,
+          horizontal: horizontalListItem.padding ?? 6,
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
