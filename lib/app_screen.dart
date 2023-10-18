@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ui_renderer/components/banner_widget.dart';
+import 'package:ui_renderer/components/horizontal_list_widget.dart';
 import 'package:ui_renderer/controllers/app_controller.dart';
 import 'package:ui_renderer/enums/widget_type.dart';
 import 'package:ui_renderer/models/custom_banner.dart';
 import 'package:ui_renderer/models/custom_widget.dart';
+import 'package:ui_renderer/models/horizontal_list.dart';
 
 class AppScreen extends StatefulWidget {
   const AppScreen({super.key});
@@ -70,7 +72,9 @@ class _AppScreenState extends State<AppScreen> {
           banner: customWidget as CustomBanner,
         );
       case WidgetType.horizontalList:
-        return const SizedBox.shrink();
+        return HorizontalListWidget(
+          horizontalList: customWidget as HorizontalList,
+        );
       case WidgetType.bannerCarousal:
         return const SizedBox.shrink();
       default:

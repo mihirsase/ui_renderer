@@ -4,12 +4,12 @@ import 'package:ui_renderer/models/custom_widget.dart';
 
 class HorizontalList extends CustomWidget {
   final String? title;
-  final List<HorizontalListItem>? items;
+  final List<HorizontalListItem> items;
 
   HorizontalList({
     super.widgetType,
     this.title,
-    this.items,
+    required this.items,
   });
 
   static HorizontalList fromJson(final Map<String, dynamic> json) {
@@ -36,7 +36,7 @@ class HorizontalListItem {
     return HorizontalListItem(
       type: getHorizontalListItemTypeFromString(json['type']),
       text: json['text'],
-      image: json['text'],
+      image: json['image'],
     );
   }
 
