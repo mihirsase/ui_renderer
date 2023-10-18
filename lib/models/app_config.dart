@@ -3,11 +3,11 @@ import 'package:ui_renderer/models/custom_widget.dart';
 
 class AppConfig {
   final AppTheme? appTheme;
-  final List<CustomWidget>? widgets;
+  final List<CustomWidget> widgets;
 
   AppConfig({
     this.appTheme,
-    this.widgets,
+    required this.widgets,
   });
 
   static AppConfig fromJson(final Map<String, dynamic> json) {

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:ui_renderer/enums/widget_type.dart';
 import 'package:ui_renderer/models/custom_widget.dart';
 
-class Banner extends CustomWidget {
+class CustomBanner extends CustomWidget {
   final String? image;
   final Color? color;
   final String? headerText;
   final String? footerText;
   final bool? footerIcon;
 
-  Banner({
+  CustomBanner({
     super.widgetType,
     this.image,
     this.color,
@@ -18,8 +18,8 @@ class Banner extends CustomWidget {
     this.footerIcon,
   });
 
-  static Banner fromJson(final Map<String, dynamic> json) {
-    return Banner(
+  static CustomBanner fromJson(final Map<String, dynamic> json) {
+    return CustomBanner(
       widgetType: getWidgetTypeFromString(json['type']),
       image: json['image'],
       color: _jsonToColor('color', json),

@@ -1,5 +1,5 @@
 import 'package:ui_renderer/enums/widget_type.dart';
-import 'package:ui_renderer/models/banner.dart';
+import 'package:ui_renderer/models/custom_banner.dart';
 import 'package:ui_renderer/models/banner_carousal.dart';
 import 'package:ui_renderer/models/horizontal_list.dart';
 
@@ -14,7 +14,7 @@ class CustomWidget {
     WidgetType? widgetType = getWidgetTypeFromString(json['type']);
     switch (widgetType) {
       case WidgetType.banner:
-        return Banner.fromJson(json);
+        return CustomBanner.fromJson(json);
       case WidgetType.horizontalList:
         return HorizontalList.fromJson(json);
       case WidgetType.bannerCarousal:
