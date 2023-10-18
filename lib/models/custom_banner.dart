@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_renderer/enums/widget_type.dart';
+import 'package:ui_renderer/extensions/double_extenstion.dart';
 import 'package:ui_renderer/models/custom_widget.dart';
 
 class CustomBanner extends CustomWidget {
@@ -30,8 +31,8 @@ class CustomBanner extends CustomWidget {
       headerText: json['header_text'],
       footerText: json['footer_text'],
       footerIcon: json['footer_icon'],
-      padding: json['padding'],
-      borderRadius: json['border_radius'],
+      padding: DoubleExtension.toDouble(json['padding']),
+      borderRadius: DoubleExtension.toDouble(json['border_radius']),
     );
   }
   static List<CustomBanner> listFromJson(final List<dynamic>? jsons) {
