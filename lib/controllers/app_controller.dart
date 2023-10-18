@@ -1,21 +1,15 @@
-import 'package:get/get.dart';
 import 'package:ui_renderer/models/app_config.dart';
 import 'package:ui_renderer/repos/app_repo.dart';
 
-class AppController extends GetxController {
+class AppController {
   AppConfig appConfig = AppConfig(widgets: []);
-  var isLoading = false.obs;
   final AppRepo _appRepo = AppRepo();
 
-  Future load() async {
+  void load() {
     try {
-      isLoading.value = true;
-      appConfig = await _appRepo.loadAppConfig();
+      appConfig = _appRepo.loadAppConfig();
     } catch (e) {
       print(e);
     }
-    isLoading.value = false;
   }
-
-
 }

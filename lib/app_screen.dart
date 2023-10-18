@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:ui_renderer/components/banner_carousal_widget.dart';
 import 'package:ui_renderer/components/banner_widget.dart';
 import 'package:ui_renderer/components/horizontal_list_widget.dart';
 import 'package:ui_renderer/controllers/app_controller.dart';
 import 'package:ui_renderer/enums/widget_type.dart';
+import 'package:ui_renderer/models/banner_carousal.dart';
 import 'package:ui_renderer/models/custom_banner.dart';
 import 'package:ui_renderer/models/custom_widget.dart';
 import 'package:ui_renderer/models/horizontal_list.dart';
@@ -27,21 +28,11 @@ class _AppScreenState extends State<AppScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(
-        () {
-          return _body();
-        },
-      ),
+      body: _body(),
     );
   }
 
   Widget _body() {
-    if (_appController.isLoading.value) {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
-    }
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: ListView(
@@ -76,7 +67,9 @@ class _AppScreenState extends State<AppScreen> {
           horizontalList: customWidget as HorizontalList,
         );
       case WidgetType.bannerCarousal:
-        return const SizedBox.shrink();
+        return BannerCarousalWidget(
+          bannerCarousal: customWidget as BannerCarousal,
+        );
       default:
         return const SizedBox.shrink();
     }
