@@ -13,6 +13,12 @@ class HorizontalListItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (horizontalListItem.type == HorizontalListItemType.circularItem) {
+      if (!horizontalListItem.isValid) {
+        return const Placeholder(
+          fallbackHeight: 100,
+          fallbackWidth: 100,
+        );
+      }
       return Column(
         children: [
           Container(
@@ -52,6 +58,12 @@ class HorizontalListItemWidget extends StatelessWidget {
         ],
       );
     } else if (horizontalListItem.type == HorizontalListItemType.boxItem) {
+      if (!horizontalListItem.isValid) {
+        return const Placeholder(
+          fallbackHeight: 150,
+          fallbackWidth: 100,
+        );
+      }
       return Container(
         width: 100,
         padding: EdgeInsets.symmetric(
@@ -95,6 +107,9 @@ class HorizontalListItemWidget extends StatelessWidget {
         ),
       );
     }
-    return const SizedBox.shrink();
+    return const Placeholder(
+      fallbackHeight: 150,
+      fallbackWidth: 150,
+    );
   }
 }

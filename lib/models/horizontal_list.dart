@@ -53,4 +53,8 @@ class HorizontalListItem {
       }).toList();
     }
   }
+
+  bool get isValid {
+    return type!=null && text!=null && image!=null;
+  }
 }

@@ -16,4 +16,8 @@ class BannerCarousal extends CustomWidget {
       banners: CustomBanner.listFromJson(json['banners']),
     );
   }
+
+  bool get isValid {
+    return banners.length >= 2;
+  }
 }

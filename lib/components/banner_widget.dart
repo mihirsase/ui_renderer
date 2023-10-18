@@ -11,6 +11,11 @@ class BannerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!banner.isValid) {
+      return const Placeholder(
+        fallbackHeight: 150,
+      );
+    }
     return Container(
       height: 150,
       padding: EdgeInsets.all(banner.padding ?? 16),

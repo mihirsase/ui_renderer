@@ -35,6 +35,7 @@ class CustomBanner extends CustomWidget {
       borderRadius: DoubleExtension.toDouble(json['border_radius']),
     );
   }
+
   static List<CustomBanner> listFromJson(final List<dynamic>? jsons) {
     if (jsons == null) {
       return <CustomBanner>[];
@@ -65,5 +66,9 @@ class CustomBanner extends CustomWidget {
       }
       return null;
     }
+  }
+
+  bool get isValid {
+    return (image != null || color != null) && headerText != null && footerText != null;
   }
 }

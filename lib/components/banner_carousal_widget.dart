@@ -45,6 +45,11 @@ class _BannerCarousalWidgetState extends State<BannerCarousalWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if(!widget.bannerCarousal.isValid){
+      return const Placeholder(
+        fallbackHeight: 150,
+      );
+    }
     return Column(
       children: [
         SizedBox(
