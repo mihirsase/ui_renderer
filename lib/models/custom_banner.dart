@@ -28,6 +28,15 @@ class CustomBanner extends CustomWidget {
       footerIcon: json['footer_icon'],
     );
   }
+  static List<CustomBanner> listFromJson(final List<dynamic>? jsons) {
+    if (jsons == null) {
+      return <CustomBanner>[];
+    } else {
+      return jsons.map<CustomBanner>((final dynamic json) {
+        return CustomBanner.fromJson(json);
+      }).toList();
+    }
+  }
 
   static Color? _jsonToColor(String key, Map<String, dynamic> json) {
     if (json[key] == null || json[key] == '') {

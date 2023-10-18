@@ -18,7 +18,7 @@ class CustomWidget {
       case WidgetType.horizontalList:
         return HorizontalList.fromJson(json);
       case WidgetType.bannerCarousal:
-        return BannerCarousal();
+        return BannerCarousal.fromJson(json);
       default:
         return CustomWidget(
           widgetType: getWidgetTypeFromString(
