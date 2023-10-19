@@ -101,6 +101,7 @@ class HorizontalListItemWidget extends StatelessWidget {
               horizontalListItem.text ?? "",
               style: const TextStyle(
                 fontSize: 14,
+                color: Colors.grey,
               ),
             ),
           ],

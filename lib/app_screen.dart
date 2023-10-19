@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ui_renderer/components/banner_carousal_widget.dart';
 import 'package:ui_renderer/components/banner_widget.dart';
 import 'package:ui_renderer/components/horizontal_list_widget.dart';
 import 'package:ui_renderer/controllers/app_controller.dart';
+import 'package:ui_renderer/enums/app_theme.dart';
 import 'package:ui_renderer/enums/widget_type.dart';
 import 'package:ui_renderer/models/banner_carousal.dart';
 import 'package:ui_renderer/models/custom_banner.dart';
@@ -23,6 +25,13 @@ class _AppScreenState extends State<AppScreen> {
   void initState() {
     super.initState();
     _appController.load();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_appController.appConfig.appTheme == AppTheme.dark) {
+        Get.changeTheme(ThemeData.dark(useMaterial3: true));
+      } else {
+        Get.changeTheme(ThemeData.light(useMaterial3: true));
+      }
+    });
   }
 
   @override

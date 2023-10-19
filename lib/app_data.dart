@@ -11,7 +11,7 @@ String appData = """
          "footer_text":"Cook Chicken Curry",
          "footer_icon":true,
          "padding": 20.0,
-         "border_radius": 50.0
+         "border_radius": 12.0
       },
       {
          "type":"banner",
