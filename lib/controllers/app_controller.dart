@@ -1,3 +1,4 @@
+import 'package:ui_renderer/app_data.dart';
 import 'package:ui_renderer/models/app_config.dart';
 import 'package:ui_renderer/repos/app_repo.dart';
 
@@ -7,8 +8,8 @@ class AppController {
 
   void load() {
     try {
-      appConfig = _appRepo.loadAppConfig();
-    } catch (e,s) {
+      appConfig = _appRepo.loadAppConfig(appData);
+    } catch (e, s) {
       print(e);
       print(s);
     }
