@@ -37,11 +37,18 @@ class _AppScreenState extends State<AppScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _body(),
+      body: Obx(() {
+        return _body();
+      }),
     );
   }
 
   Widget _body() {
+    if (_appController.isLoading.value) {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    }
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: ListView(
